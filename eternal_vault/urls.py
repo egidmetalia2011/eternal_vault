@@ -15,8 +15,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
+from eternalvault_app import views as app_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('eternalvault_app.urls')),
+    path('', app_views.home_view, name='home'),
+
 ]
+

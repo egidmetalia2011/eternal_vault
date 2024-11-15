@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'eternalvault_app',
 ]
 
 MIDDLEWARE = [
@@ -75,12 +76,12 @@ WSGI_APPLICATION = 'eternal_vault.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'mysql.connector.django',
-        'NAME': 'eternalvault',
-        'USER': 'admin',
-        'PASSWORD': 'Mam2020!',
-        'HOST': 'eternalvault.c3s4yc8usk1h.us-east-2.rds.amazonaws.com',
-        'PORT': '13306',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'eternalvault_local',
+        'USER': 'vaultuser',
+        'PASSWORD': 'vaultpassword',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
@@ -125,3 +126,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+ADMIN_EMAIL = 'egidmetalia71@gmail.com'
+LOGIN_URL = 'login'
