@@ -6,5 +6,11 @@
 <body>
     <h1>Welcome to Eternal Vault</h1>
     <p><a href="{% url 'upload_file' %}">Go to upload page</a></p>
+    {% for file in user.securedata_set.all %}
+        <div>
+            <p>{{ file.title }}</p>
+            <a href="{% url 'download_file' file.id %}">Download File</a>
+        </div>
+    {% endfor %}
 </body>
 </html>
